@@ -1,5 +1,5 @@
 <template>
-    <div class="inner bg">
+    <div class="inner home bg">
         <div class="head">
             <div class="title"></div>
             <div class="summary">
@@ -74,8 +74,36 @@
                     </li>
                 </ul>
                 <div class="check-alarm">
-                    <div class="person"></div>
-                    <div class="chemistry"></div>
+                    <div class="person">
+                        <h3>人员查验</h3>
+                        <div class="circle">
+                            <div>
+                                <el-progress type="circle" :width="140" :stroke-width="12" :percentage="60"></el-progress>
+                                <p>检出率</p>
+                            </div>
+                            <div>
+                                <el-progress type="circle" :width="140" :stroke-width="12" :percentage="35"></el-progress>
+                                <p>确诊率</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="chemistry">
+                        <h3>化学毒气报警</h3>
+                        <ul>
+                            <li>
+                                <i class="el-icon-m-alarm"></i>
+                                <p>
+                                    <span>正常</span>
+                                    <span class="error">异常</span>
+                                </p>
+                            </li>
+                            <li>
+                                <div class="text">Confidence Test</div>
+                                <p>Last Confidence test</p>
+                                <p>2017-10-23  10:23:59  <span class="passed">PASSED</span></p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="box-right">
@@ -126,11 +154,12 @@
 <script>
     import Vue from "vue";
     import {mapState,mapMutations} from 'vuex';
-    import {Steps,Step,Carousel,CarouselItem} from "element-ui";
+    import {Steps,Step,Carousel,CarouselItem,Progress} from "element-ui";
     Vue.component(Steps.name,Steps);
     Vue.component(Step.name,Step);
     Vue.component(Carousel.name,Carousel);
     Vue.component(CarouselItem.name,CarouselItem);
+    Vue.component(Progress.name,Progress);
     export default {
         name:"home",
         computed: {

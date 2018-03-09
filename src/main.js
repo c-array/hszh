@@ -23,10 +23,12 @@ import 'v-charts/lib/style.css';
 import VeHistogram from 'v-charts/lib/histogram';
 import VeLine from 'v-charts/lib/line';
 import VePie from 'v-charts/lib/pie';
+import VeRing from 'v-charts/lib/ring';
 import 'echarts/lib/component/title';
 Vue.component(VeHistogram.name,VeHistogram);
 Vue.component(VePie.name, VePie);
 Vue.component(VeLine.name, VeLine);
+Vue.component(VeRing.name, VeRing);
 
 /* eslint-disable no-new */
 new Vue({

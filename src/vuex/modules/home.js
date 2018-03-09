@@ -15,7 +15,7 @@ export default {
                     { 'xAxis': 'D-5', '出境': 150, '入境': 116 }
                 ]
             },
-            accessFlight: {
+            accessFlight: { //出入境航班数
                 columns: ['xAxis', '出境', '入境'],
                 rows: [
                     { 'xAxis': '当天', '出境': 500, '入境': 300 },
@@ -26,7 +26,7 @@ export default {
                     { 'xAxis': 'D-5', '出境': 150, '入境': 116 }
                 ]
             },
-            personCheck: {
+            personCheck: { //人员查验
                 columns: ['xAxis', '确认率', '采样', '流调', '报警'],
                 rows: [
                     { 'xAxis': '当天', '确认率': 10, '采样': 6, '流调': 1, '报警': 4 },
@@ -37,7 +37,7 @@ export default {
                     { 'xAxis': 'D-5', '确认率': 4, '采样': 3, '流调': 2, '报警': 7 }
                 ]
             },
-            intercept: {
+            intercept: { //截留物
                 columns: ['name', 'value'],
                 rows: [
                     { 'name': '动物及动物制品', 'value': 1000 },
@@ -49,7 +49,7 @@ export default {
                     { 'name': 'X光机', 'value': 4123 },
                 ]
             },
-            micclmt: {
+            micclmt: { //微小气候
                 columns: ['xAxis', '出境', '入境'],
                 rows: [
                     { 'xAxis': '风速', '出境': 200},

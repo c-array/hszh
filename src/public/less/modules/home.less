@@ -128,12 +128,89 @@
             background-size: 100% 100%;
             width: 48%;
             height: 253px;
+            h3{
+                padding-left: 60px;
+                padding-top: 10px;
+                text-align: center;
+                color: #fff;
+                font-weight: normal;
+            }
+        }
+        .circle{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 216px;
+            p{
+                text-align: center;
+                color: #fff;
+                padding-top: 10px;
+            }
         }
         .chemistry{
             background: url('../../images/box2.png') no-repeat;
             background-size: 100% 100%;
             width: 48%;
             height: 253px;
+            h3{
+                padding-left: 50px;
+                padding-top: 10px;
+                color: #fff;
+                font-weight: normal;
+            }
+            ul{
+                display: flex;
+                align-items: center;
+                height: 216px;
+            }
+            li{
+                text-align: center;
+                flex: 0 0 40%;
+                &:last-child{
+                    flex: 0 0 60%;
+                    text-align: left;
+                }
+                i{
+                    font-size: 60px;
+                    color: #53fe7a;
+                }
+                p{
+                    padding-top: 20px;
+                    color: #fff;
+                }
+                span{
+                    display: inline-block;
+                    &::before{
+                        content: "●";
+                        color: #53fe7a;
+                        padding-right: 6px;
+                    }
+                    &.error{
+                        margin-left: 15px;
+                        &::before{
+                            color: #fe5453;
+                        }
+                    }
+                    &.passed{
+                        color: #49caed;
+                        padding-left: 15px;
+                        cursor: pointer;
+                        &::before{
+                            content: "";
+                        }
+                    }
+                }
+            }
+            .text{
+                width: 206px;
+                letter-spacing: 2px;
+                font-size: 18px;
+                color: #49caed;
+                padding: 10px 0;
+                cursor: pointer;
+                text-align: center;
+                border: 1px solid #49caed;
+            }
         }
     }
 }
