@@ -1,24 +1,3 @@
-.head{
-    height: 130px;
-    background: url('../../images/head-bg.png') no-repeat;
-    background-size: 100% 100%;
-    padding-top: 20px;
-    .title{
-        height: 46px;
-        background: url('../../images/title.png') no-repeat scroll center;
-    }
-    .summary{
-        display: flex;
-        justify-content: center;
-        color: #fff;
-        text-align: center;
-        span{
-            display: inline-block;
-            padding: 10px 40px 0;
-        }
-    }
-}
-
 .container{
     display: flex;
     padding-bottom: 30px;
@@ -65,9 +44,65 @@
     flex-direction: column;
     justify-content: space-between;
     .area{
+        position: relative;
+        display: flex;
         height: 580px;
         background: url('../../images/area.png') no-repeat;
         background-size: 100% 100%;
+        padding: 40px 50px;
+        //transition: width 1s,height 1s;
+        overflow: hidden;
+        .icon{
+            position: absolute;
+            right: 120px;
+            top: 40px;
+            width: 36px;
+            height: 36px;
+            z-index: 999999;
+            text-align: center;
+            line-height: 36px;
+            color: #fff;
+            border: 1px solid #1ec0ec;
+            border-radius: 50%;
+            box-shadow: inset 0 0 20px 6px rgba(28,167,207,0.25);
+            font-size: 16px;
+            cursor: pointer;
+            &.active{
+                right: 60px;
+            }
+        }
+        &.screen{
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 9999;
+            padding: 80px;
+            background: url('../../images/area.png') no-repeat scroll rgba(0, 0, 0, 0.8);
+            background-size: 100% 100%;
+            width: 100%;
+            height: 100%;
+            .icon{
+                top: 70px;
+                right: 160px;
+                &.active{
+                    right: 100px;
+                }
+            }
+            .device{
+                flex: 0 0 80%;
+                margin: 0 auto;
+                justify-content: space-between;
+            }
+        }
+    }
+    .area-box{
+        position: relative;
+        flex: 1;
+        height: 100%;
+        iframe{
+            width: 100%;
+            height: 100%;
+        }
     }
     .steps{
         display: flex;

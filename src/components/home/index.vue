@@ -1,18 +1,11 @@
 <template>
     <div class="inner home bg">
-        <div class="head">
-            <div class="title"></div>
-            <div class="summary">
-                <span>2018年1月10号</span>
-                <span>星期三</span>
-                <span>06:12:12</span>
-            </div>
-        </div>
+        <heads></heads>
         <div class="container">
             <div class="box-left">
                 <dl>
                     <dt>出入境人数</dt>
-                    <dd>
+                    <router-link to="/person" tag="dd">
                         <ve-line 
                             height="100%" 
                             :legend="lineConfig.legend" 
@@ -20,11 +13,11 @@
                             :grid="lineConfig.grid" 
                             :data="chartsData.accessPerson">
                         </ve-line>
-                    </dd>
+                    </router-link>
                 </dl>
                 <dl>
                     <dt>出入境航班数</dt>
-                    <dd>
+                    <router-link to="/flight" tag="dd">
                         <ve-histogram 
                             height="100%" 
                             :colors="histogramConfig.colors" 
@@ -33,14 +26,13 @@
                             :grid="histogramConfig.grid" 
                             :data="chartsData.accessFlight">
                         </ve-histogram>
-                    </dd>
+                    </router-link>
                 </dl>
                 <dl>
                     <dt>人员查验</dt>
                     <dd>
                         <ve-line 
                             height="100%"
-                            :settings="lineConfig.settings" 
                             :colors="lineConfig.colors"
                             :legend="lineConfig.legend" 
                             :after-config="lineConfig.afterConfig" 
@@ -51,7 +43,12 @@
                 </dl>
             </div>
             <div class="box-center">
-                <div class="area"></div>
+                <div class="area animated" :class="vm.isScreen ? 'zoomIn screen' : ''">
+                    <i @click="vm.switch = !vm.switch" class="el-icon-m-switch icon"></i>
+                    <i @click="vm.isScreen = !vm.isScreen" class="el-icon-m-screen icon active"></i>
+                    <dimensions v-show="vm.switch" :class="vm.switch ? 'bounceInRight animated' : 'fadeOutLeft animated' "></dimensions>
+                    <deviceMonitor v-show="!vm.switch" :class="!vm.switch ? 'bounceInRight animated' : 'fadeOutLeft animated' "></deviceMonitor>
+                </div>
                 <ul class="steps">
                     <li class="active">
                         <span class="circle"></span>
@@ -140,7 +137,7 @@
                                 :legend="lineConfig.legend" 
                                 :after-config="lineConfig.afterConfig" 
                                 :grid="lineConfig.grid" 
-                                :data="chartsData.accessPerson">
+                                :data="chartsData.nuclear">
                             </ve-line>
                         </dd>
                     </dl>
@@ -160,6 +157,10 @@
     Vue.component(Carousel.name,Carousel);
     Vue.component(CarouselItem.name,CarouselItem);
     Vue.component(Progress.name,Progress);
+    import dimensions from './3d.vue';
+    import deviceMonitor from '../device-monitor/index.vue';
+    import heads from '../common/head.vue';
+
     export default {
         name:"home",
         computed: {
@@ -167,8 +168,14 @@
                 lineConfig: state => state.common.lineConfig,
                 histogramConfig: state => state.common.histogramConfig,
                 pieConfig: state => state.common.pieConfig,
-                chartsData: state => state.common.home.chartsData
+                chartsData: state => state.common.home.chartsData,
+                vm: state => state.common.home.vm
             })
+        },
+        components: {
+            dimensions,
+            deviceMonitor,
+            heads
         }
     }
 </script>

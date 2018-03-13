@@ -4,6 +4,8 @@ Vue.use(Vuex);
 
 import login from './modules/login';
 import home from './modules/home';
+import exitEnterPerson from './modules/exit-enter-person';
+import exitEnterFlight from './modules/exit-enter-flight';
 
 export default new Vuex.Store({
     modules: {
@@ -96,11 +98,37 @@ export default new Vuex.Store({
                             ['动物及动物制品', '植物及植物制品', '水产','其他']
                         ]
                     }
+                },
+                mapConfig:{
+                    settings:{
+                        position:'world',
+                        roam:true,
+                        label:{
+                            normal: {
+                                show:false
+                            },
+                            emphasis:{
+                                color:"#fff"
+                            }
+                        },
+                        selectData:true,
+                        itemStyle: {
+                            normal: {
+                                areaColor: '#0071a1',
+                                borderColor: '#60a5c2'
+                            },
+                            emphasis: {
+                                areaColor: '#4eb8db'
+                            }
+                        }
+                    }
                 }
             },
             modules: {
                 login,
-                home
+                home,
+                exitEnterPerson,
+                exitEnterFlight
             }
         }
     }

@@ -3,6 +3,10 @@ import Vue from 'vue';
 export default {
     namespaced: true,
     state: {
+        vm:{
+            isScreen:false,
+            switch:true
+        },
         chartsData: {
             accessPerson: { //出入境人数
                 columns: ['xAxis', '出境', '入境'],
@@ -63,7 +67,7 @@ export default {
                     { 'xAxis': '甲醛', '出境': 160}
                 ]
             },
-            accessPerson: { //出入境人数
+            nuclear: { //出入境人数
                 columns: ['xAxis', '中子', '伽马'],
                 rows: [
                     { 'xAxis': '当天', '中子': 500, '伽马': 300 },

@@ -1,0 +1,109 @@
+.device{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    h3{
+        text-align: center;
+        color: #fff;
+        font-weight: normal;
+        font-size: 30px;
+    }
+}
+.check-aisle{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    .title{
+        color: #acedff;
+        font-size: 18px;
+        margin-right: 20px;
+        width: 135px;
+        i{
+            width: 43px;
+            height: 43px;
+            line-height: 43px;
+            border-radius: 50%;
+            background-color: #1ec0ec;
+            text-align: center;
+            font-size: 30px;
+            color: #fff;
+            vertical-align: middle;
+            margin-right: 15px;
+            &.small{
+                font-size: 22px;
+            }
+        }
+    }
+    ul{
+        display: flex;
+        flex:1;
+        justify-content: space-between;
+    }
+    li{
+        border: 1px solid #1ebeea;
+        box-shadow: inset 0 1px 20px 0 rgba(30,192,236,0.50);
+        padding: 10px 20px;
+        width: 222px;
+        &.col-10{
+            flex: 1;
+            width: auto;
+            p{
+                justify-content: space-between;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+            span{
+                margin-left: 0;
+            }
+        }
+        &:nth-child(2){
+            width: 151px;
+        }
+        h4{
+            padding-bottom: 10px;
+            font-weight: normal;
+            text-align: center;
+            border-bottom:1px solid #1ec0ec;
+            color: #acedff;
+        }
+    }
+    p{
+        display: flex;
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+    span{
+        width: 17px;
+        height: 17px;
+        text-align: center;
+        display: inline-block;
+        margin-left: 37px;
+        line-height: 14px;
+        color: #53fe7a;
+        border: 1px solid #53fe7a;
+        &.offline{
+            border: 1px solid #ececec;
+            color: #ececec;
+        }
+        &.aberrant{
+            border: 1px solid #fe5453;
+            color: #fe5453;
+        }
+        &:nth-child(4n+1){
+            margin-left: 0;
+        }
+    }
+    .transfer{
+        p{
+            justify-content: center;
+        }
+    }
+    .climate{
+        p{
+            margin-bottom: 10px;
+        }
+        .transfer{
+            width: 120px;
+        }
+    }
+}

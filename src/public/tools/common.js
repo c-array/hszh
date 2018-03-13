@@ -21,6 +21,8 @@ export const formatDate = (params => {
     var hour = d.getHours();
     var minute = d.getMinutes();
     var second = d.getSeconds();
+    var day = d.getDay();
+    var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
     if(params.type == 'yyyy-mm-dd'){
         time = year + '-' + fillIn(month) + '-' + fillIn(ndate);
     }else if(params.type == 'yyyy-mm'){
@@ -31,6 +33,8 @@ export const formatDate = (params => {
         time = fillIn(hour) + ':' + fillIn(minute) + ':' + fillIn(second);
     }else if(params.type == 'time'){
         time = d.getTime();
+    }else if(params.type == 'week'){
+        time = weekday[day];
     }else{
         time = year + '-' + fillIn(month) + '-' + fillIn(ndate) + ' ' + fillIn(hour) + ':' + fillIn(minute) + ':' + fillIn(second);
     }

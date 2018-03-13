@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <script src="public/lib/async.js"></script>
+    <script src="public/lib/jquery-1.9.0.js"></script>
+    <script src="public/lib/vue.min.js"></script>
+    <script src="public/lib/three.js"></script>
+    <script src="public/lib/Tween.js"></script>
+    <script src="public/lib/loaders/controls/OrbitControls.js"></script>
+    <script src="public/lib/loaders/JSONLoader.js"></script>
+    <script src="public/lib/stats.js"></script>
+    <script src="public/lib/dat.gui.min.js"></script>
+    <script src="public/lib/onEvent.js"></script>
+    <link rel="stylesheet" href="public/css/style.css" type="text/css" />
+    <title>机场楼层3D展示</title>
+</head>
+<body>
+    <div id="app">
+        <div class="floor-main">
+            <button @click="flatSolid" class="floor-toggle" :class="{active: vm.flatValue == '立体' || vm.flatValue == '平面'}"><img :src="vm.imgPath" alt=""></button>
+            <button :class="{active: item.check}" @click="selectFloor(item);" v-for="item in floorData" class="floor">{{item.id}}</button>
+        </div>
+    </div>
+<div id="statsOutput"></div>
+<div id="three"></div>
+<script type="text/javascript" src="public/js/3d.js"></script>
+<script type="text/javascript" src="public/js/index.js"></script>
+</body>
+</html>
