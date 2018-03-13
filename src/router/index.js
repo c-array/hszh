@@ -18,6 +18,11 @@ export default new Router({
       path: '/flight',
       name: 'flight',
       component: resolve => require(['@/components/exit-enter-flight/index'],resolve)
+    },
+    {
+      path: '/person-check',
+      name: 'person-check',
+      component: resolve => require(['@/components/person-check/index'],resolve)
     }
   ]
 })

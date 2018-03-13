@@ -1,17 +1,10 @@
 <template>
-    <div class="inner exit-enter-flight bg">
+    <div class="inner person-check bg">
         <heads></heads>
         <div class="container">
-            <div class="box-left">
+            <div class="box-left space-around">
                 <dl>
-                    <dt>承运人航班数</dt>
-                    <dd>
-                        <ve-line height="100%" :legend="lineConfig.legend" :after-config="lineConfig.afterConfig" :grid="lineConfig.grid" :data="chartsData.carrierFlight">
-                        </ve-line>
-                    </dd>
-                </dl>
-                <dl>
-                    <dt>航空公司搭载人数统计</dt>
+                    <dt>医学排查人数</dt>
                     <dd>
                         <ve-histogram 
                             height="100%" 
@@ -19,46 +12,59 @@
                             :legend="histogramConfig.legend"
                             :after-config="histogramConfig.afterConfig" 
                             :grid="histogramConfig.grid" 
-                            :data="chartsData.flightPerson">
+                            :settings="histogramConfig.settings"
+                            :data="chartsData.medicineCheck">
                         </ve-histogram>
                     </dd>
                 </dl>
                 <dl>
-                    <dt>入境航班出发港统计</dt>
+                    <dt>2017年检出率</dt>
                     <dd>
                         <ve-histogram 
                             height="100%" 
                             :colors="histogramConfig.colors" 
-                            :legend-visible="false"
+                            :legend="histogramConfig.legend"
                             :after-config="histogramConfig.afterConfig" 
                             :grid="histogramConfig.grid" 
-                            :data="chartsData.enterFlight">
+                            :settings="{
+                                axisSite: { right: ['检出率'] },
+                                yAxisType: ['KMB', 'percent'],
+                                yAxisName: ['人数', '占比'],
+                                showLine: ['检出率']
+                            }"
+                            :data="chartsData.checkOut">
                         </ve-histogram>
                     </dd>
                 </dl>
             </div>
             <div class="box-center">
-                <h3>入境航班来源地统计</h3>
+                <h3>人员来源地统计</h3>
                 <div class="source">
                     <ve-map :data="chartsData.mapData" :legend-visible="false" height="800px" :settings="mapConfig.settings"></ve-map>
                 </div>
             </div>
-            <div class="box-right order">
+            <div class="box-right space-around">
                 <dl>
-                    <dt>出境航班到达国家统计</dt>
+                    <dt>2017年确诊率</dt>
                     <dd>
                         <ve-histogram 
                             height="100%" 
                             :colors="histogramConfig.colors" 
-                            :legend-visible="false"
+                            :legend="histogramConfig.legend"
                             :after-config="histogramConfig.afterConfig" 
                             :grid="histogramConfig.grid" 
-                            :data="chartsData.enterFlight">
+                            :settings="{
+                                axisSite: { right: ['确诊率'] },
+                                yAxisType: ['KMB', 'percent'],
+                                yAxisName: ['人数', '占比'],
+                                showLine: ['确诊率']
+                            }"
+                            :data="chartsData.diagnose">
                         </ve-histogram>
                     </dd>
                 </dl>
                 <dl>
-                    <dt>出境航班到达港统计</dt>
+                    <dt>2017年确诊病例统计</dt>
                     <dd>
                         <ve-histogram 
                             height="100%" 
@@ -66,7 +72,8 @@
                             :legend-visible="false"
                             :after-config="histogramConfig.afterConfig" 
                             :grid="histogramConfig.grid" 
-                            :data="chartsData.enterFlight">
+                            :settings="histogramConfig.settings"
+                            :data="chartsData.diagnoseCases">
                         </ve-histogram>
                     </dd>
                 </dl>
@@ -75,7 +82,7 @@
     </div>
 </template>
 <style scoped lang="less">
-    @import '../../public/less/modules/exit-enter-flight.less';
+    @import '../../public/less/modules/person-check.less';
 </style>
 <script>
     import { mapState, mapMutations } from 'vuex';
@@ -90,7 +97,7 @@
                 lineConfig: state => state.common.lineConfig,
                 histogramConfig: state => state.common.histogramConfig,
                 mapConfig: state => state.common.mapConfig,
-                chartsData: state => state.common.exitEnterFlight.chartsData
+                chartsData: state => state.common.personCheck.chartsData
             })
         }
     }

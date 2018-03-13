@@ -6,6 +6,7 @@ import login from './modules/login';
 import home from './modules/home';
 import exitEnterPerson from './modules/exit-enter-person';
 import exitEnterFlight from './modules/exit-enter-flight';
+import personCheck from './modules/person-check';
 
 export default new Vuex.Store({
     modules: {
@@ -55,7 +56,7 @@ export default new Vuex.Store({
                         bottom: '10%',
                         containLabel: true
                     },
-                    colors:["#1fd282","#e27d24"],
+                    colors:["#1fd282","#e27d24","#dec216","#fa6e86"],
                     legend:{
                         textStyle:{
                             color:"#fff",
@@ -72,11 +73,19 @@ export default new Vuex.Store({
                             }
                         })
                         options.yAxis.forEach(function(item,key){
+                            item.nameTextStyle = {
+                                color:"#fff"
+                            }
                             item.axisLabel = {
                                 color:'#fff'
                             }
                         })
                         return options;
+                    },
+                    settings:{
+                        label: {
+                            normal: { show: true, position: "top" }
+                        }
                     }
                 },
                 pieConfig:{
@@ -128,7 +137,8 @@ export default new Vuex.Store({
                 login,
                 home,
                 exitEnterPerson,
-                exitEnterFlight
+                exitEnterFlight,
+                personCheck
             }
         }
     }
