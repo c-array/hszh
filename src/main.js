@@ -32,6 +32,9 @@ Vue.component(VeLine.name, VeLine);
 Vue.component(VeRing.name, VeRing);
 Vue.component(VeMap.name, VeMap);
 
+//引入模拟数据接口
+require('./public/mock-data/api');
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

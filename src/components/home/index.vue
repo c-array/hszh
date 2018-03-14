@@ -30,7 +30,7 @@
                 </dl>
                 <dl>
                     <dt>人员查验</dt>
-                    <dd>
+                    <router-link to="/person-check" tag="dd">
                         <ve-line 
                             height="100%"
                             :colors="lineConfig.colors"
@@ -39,7 +39,7 @@
                             :grid="lineConfig.grid" 
                             :data="chartsData.personCheck">
                         </ve-line>
-                    </dd>
+                    </router-link>
                 </dl>
             </div>
             <div class="box-center">
@@ -112,7 +112,7 @@
                     </dl>
                     <dl>
                         <dt>微小气候</dt>
-                        <dd>
+                        <router-link to="/miccmlt" tag="dd">
                             <div class="switch">
                                 <span>监测设备1</span>
                                 <span>监测设备2</span>
@@ -127,11 +127,11 @@
                                 :grid="histogramConfig.grid" 
                                 :data="chartsData.micclmt">
                             </ve-histogram>
-                        </dd>
+                        </router-link>
                     </dl>
                     <dl>
                         <dt>核辐射报警数量</dt>
-                        <dd>
+                        <router-link to="/nuclear" tag="dd">
                             <ve-line 
                                 height="100%" 
                                 :legend="lineConfig.legend" 
@@ -139,7 +139,7 @@
                                 :grid="lineConfig.grid" 
                                 :data="chartsData.nuclear">
                             </ve-line>
-                        </dd>
+                        </router-link>
                     </dl>
                 </div>
         </div> 

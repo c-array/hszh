@@ -23,6 +23,16 @@ export default new Router({
       path: '/person-check',
       name: 'person-check',
       component: resolve => require(['@/components/person-check/index'],resolve)
+    },
+    {
+      path: '/miccmlt',
+      name: 'miccmlt',
+      component: resolve => require(['@/components/miccmlt/index'],resolve)
+    },
+    {
+      path: '/nuclear',
+      name: 'nuclear',
+      component: resolve => require(['@/components/nuclear/index'],resolve)
     }
   ]
 })

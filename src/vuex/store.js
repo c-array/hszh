@@ -7,6 +7,8 @@ import home from './modules/home';
 import exitEnterPerson from './modules/exit-enter-person';
 import exitEnterFlight from './modules/exit-enter-flight';
 import personCheck from './modules/person-check';
+import miccmlt from './modules/miccmlt';
+import nuclear from './modules/nuclear';
 
 export default new Vuex.Store({
     modules: {
@@ -82,6 +84,9 @@ export default new Vuex.Store({
                         })
                         return options;
                     },
+                    tooltip:{
+                        formatter:"{b0}: {c0}"
+                    },
                     settings:{
                         label: {
                             normal: { show: true, position: "top" }
@@ -110,6 +115,7 @@ export default new Vuex.Store({
                 },
                 mapConfig:{
                     settings:{
+                        positionJsonLink:"http://localhost:8080/static/world.json",
                         position:'world',
                         roam:true,
                         label:{
@@ -138,7 +144,9 @@ export default new Vuex.Store({
                 home,
                 exitEnterPerson,
                 exitEnterFlight,
-                personCheck
+                personCheck,
+                miccmlt,
+                nuclear
             }
         }
     }
