@@ -4,9 +4,10 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
+    /* 全景直播-全景监控 */
     {
       path: '/panoramic',
-      //name: 'panoramic',
+      name: 'panoramic',
       component: resolve => require(['@/components/panoramic/index'],resolve),
     },
     {
@@ -33,6 +34,12 @@ export default new Router({
       path: '/panoramic/nuclear', //核辐射
       name: 'nuclear',
       component: resolve => require(['@/components/panoramic/nuclear/index'],resolve)
+    },
+    /* 会商指挥-日常调度 */
+    {
+      path: '/contacts', //通讯录
+      name: 'contacts',
+      component: resolve => require(['@/components/daily/contacts/index'],resolve)
     },
     {
         path:'*', //路由url
