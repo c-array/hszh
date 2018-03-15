@@ -58,11 +58,11 @@
     </div>
 </template>
 <style scoped lang="less">
-    @import '../../public/less/modules/exit-enter-person.less';
+    @import '../../../public/less/modules/panoramic/person.less';
 </style>
 <script>
     import { mapState, mapMutations } from 'vuex';
-    import heads from '../common/head.vue';
+    import heads from '../../common/head.vue';
     export default {
         name: "exit-enter-person",
         components: {
@@ -72,7 +72,7 @@
             ...mapState({
                 lineConfig: state => state.common.lineConfig,
                 mapConfig: state => state.common.mapConfig,
-                chartsData: state => state.common.exitEnterPerson.chartsData
+                chartsData: state => state.common.person.chartsData
             })
         }
     }

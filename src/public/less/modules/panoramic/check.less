@@ -1,4 +1,4 @@
-.exit-enter-flight{
+.person-check{
     display: flex;
     flex-direction: column;
 }
@@ -14,7 +14,7 @@
     justify-content: space-between;
     padding-left: 54px;
     padding-right: 30px;
-    &.order{
+    &.order,&.center{
         justify-content:flex-start;
         dl{
             margin-bottom: 73px;
@@ -22,6 +22,12 @@
                 margin-bottom: 0;
             }
         }
+    }
+    &.center{
+        justify-content:center;
+    }
+    &.space-around{
+        justify-content: space-around;
     }
     dt{
         padding-left: 28px;
@@ -31,7 +37,7 @@
         position: relative;
         height: 245px;
         margin-top: -5px;
-        background: url('../../images/box.png') no-repeat;
+        background: url('../../../images/box.png') no-repeat;
         background-size: 100% 100%;
     }
     .switch{

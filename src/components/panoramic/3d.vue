@@ -4,7 +4,7 @@
     </div>
 </template>
 <style scoped lang="less">
-    @import '../../public/less/modules/home.less';
+    @import '../../public/less/modules/panoramic/index.less';
 </style>
 <script>
     export default {

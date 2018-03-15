@@ -82,11 +82,11 @@
     </div>
 </template>
 <style scoped lang="less">
-    @import '../../public/less/modules/person-check.less';
+    @import '../../../public/less/modules/panoramic/check.less';
 </style>
 <script>
     import { mapState, mapMutations } from 'vuex';
-    import heads from '../common/head.vue';
+    import heads from '../../common/head.vue';
     export default {
         name: "exit-enter-flight",
         components: {
@@ -97,7 +97,7 @@
                 lineConfig: state => state.common.lineConfig,
                 histogramConfig: state => state.common.histogramConfig,
                 mapConfig: state => state.common.mapConfig,
-                chartsData: state => state.common.personCheck.chartsData
+                chartsData: state => state.common.check.chartsData
             })
         }
     }

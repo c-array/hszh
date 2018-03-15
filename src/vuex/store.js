@@ -2,13 +2,13 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex);
 
-import login from './modules/login';
-import home from './modules/home';
-import exitEnterPerson from './modules/exit-enter-person';
-import exitEnterFlight from './modules/exit-enter-flight';
-import personCheck from './modules/person-check';
-import miccmlt from './modules/miccmlt';
-import nuclear from './modules/nuclear';
+import login from './modules/panoramic/login';
+import panoramic from './modules/panoramic/index';
+import person from './modules/panoramic/person';
+import flight from './modules/panoramic/flight';
+import check from './modules/panoramic/check';
+import miccmlt from './modules/panoramic/miccmlt';
+import nuclear from './modules/panoramic/nuclear';
 
 export default new Vuex.Store({
     modules: {
@@ -141,10 +141,10 @@ export default new Vuex.Store({
             },
             modules: {
                 login,
-                home,
-                exitEnterPerson,
-                exitEnterFlight,
-                personCheck,
+                panoramic,
+                person,
+                flight,
+                check,
                 miccmlt,
                 nuclear
             }

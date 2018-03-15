@@ -136,7 +136,7 @@
     </div>
 </template>
 <style scoped lang="less">
-    @import '../../public/less/modules/device-monitor.less';
+    @import '../../../public/less/modules/panoramic/monitor.less';
 </style>
 <script>
     export default {

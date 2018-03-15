@@ -5,34 +5,39 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/',
-      name: 'home',
-      component: resolve => require(['@/components/home/index'],resolve)
+      path: '/panoramic',
+      //name: 'panoramic',
+      component: resolve => require(['@/components/panoramic/index'],resolve),
     },
     {
-      path: '/person',
+      path: '/panoramic/person', //出入境人数
       name: 'person',
-      component: resolve => require(['@/components/exit-enter-person/index'],resolve)
+      component: resolve => require(['@/components/panoramic/person/index'],resolve)
     },
     {
-      path: '/flight',
+      path: '/panoramic/flight', //出入境航班
       name: 'flight',
-      component: resolve => require(['@/components/exit-enter-flight/index'],resolve)
+      component: resolve => require(['@/components/panoramic/flight/index'],resolve)
     },
     {
-      path: '/person-check',
-      name: 'person-check',
-      component: resolve => require(['@/components/person-check/index'],resolve)
+      path: '/panoramic/check', //人员查验
+      name: 'check',
+      component: resolve => require(['@/components/panoramic/check/index'],resolve)
     },
     {
-      path: '/miccmlt',
+      path: '/panoramic/miccmlt', //微小气候
       name: 'miccmlt',
-      component: resolve => require(['@/components/miccmlt/index'],resolve)
+      component: resolve => require(['@/components/panoramic/miccmlt/index'],resolve)
     },
     {
-      path: '/nuclear',
+      path: '/panoramic/nuclear', //核辐射
       name: 'nuclear',
-      component: resolve => require(['@/components/nuclear/index'],resolve)
+      component: resolve => require(['@/components/panoramic/nuclear/index'],resolve)
+    },
+    {
+        path:'*', //路由url
+        redirect:"/panoramic",
+        //component:resolve => require(['@/login/index.vue'],resolve) //加载组件
     }
   ]
 })

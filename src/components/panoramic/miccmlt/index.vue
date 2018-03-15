@@ -52,11 +52,11 @@
     </div>
 </template>
 <style scoped lang="less">
-    @import '../../public/less/modules/miccmlt.less';
+    @import '../../../public/less/modules/panoramic/miccmlt.less';
 </style>
 <script>
     import {mapState,mapMutations} from 'vuex';
-    import heads from '../common/head.vue';
+    import heads from '../../common/head.vue';
     export default {
         name:"miccmlt",
         components: {

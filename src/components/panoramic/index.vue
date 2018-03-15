@@ -5,7 +5,7 @@
             <div class="box-left">
                 <dl>
                     <dt>出入境人数</dt>
-                    <router-link to="/person" tag="dd">
+                    <router-link to="/panoramic/person" tag="dd">
                         <ve-line 
                             height="100%" 
                             :legend="lineConfig.legend" 
@@ -17,7 +17,7 @@
                 </dl>
                 <dl>
                     <dt>出入境航班数</dt>
-                    <router-link to="/flight" tag="dd">
+                    <router-link to="/panoramic/flight" tag="dd">
                         <ve-histogram 
                             height="100%" 
                             :colors="histogramConfig.colors" 
@@ -30,7 +30,7 @@
                 </dl>
                 <dl>
                     <dt>人员查验</dt>
-                    <router-link to="/person-check" tag="dd">
+                    <router-link to="/panoramic/check" tag="dd">
                         <ve-line 
                             height="100%"
                             :colors="lineConfig.colors"
@@ -112,7 +112,7 @@
                     </dl>
                     <dl>
                         <dt>微小气候</dt>
-                        <router-link to="/miccmlt" tag="dd">
+                        <router-link to="/panoramic/miccmlt" tag="dd">
                             <div class="switch">
                                 <span>监测设备1</span>
                                 <span>监测设备2</span>
@@ -131,7 +131,7 @@
                     </dl>
                     <dl>
                         <dt>核辐射报警数量</dt>
-                        <router-link to="/nuclear" tag="dd">
+                        <router-link to="/panoramic/nuclear" tag="dd">
                             <ve-line 
                                 height="100%" 
                                 :legend="lineConfig.legend" 
@@ -146,7 +146,7 @@
     </div>
 </template>
 <style scoped lang="less">
-    @import '../../public/less/modules/home.less';
+    @import '../../public/less/modules/panoramic/index.less';
 </style>
 <script>
     import Vue from "vue";
@@ -158,7 +158,7 @@
     Vue.component(CarouselItem.name,CarouselItem);
     Vue.component(Progress.name,Progress);
     import dimensions from './3d.vue';
-    import deviceMonitor from '../device-monitor/index.vue';
+    import deviceMonitor from './monitor/index.vue';
     import heads from '../common/head.vue';
 
     export default {
@@ -168,8 +168,8 @@
                 lineConfig: state => state.common.lineConfig,
                 histogramConfig: state => state.common.histogramConfig,
                 pieConfig: state => state.common.pieConfig,
-                chartsData: state => state.common.home.chartsData,
-                vm: state => state.common.home.vm
+                chartsData: state => state.common.panoramic.chartsData,
+                vm: state => state.common.panoramic.vm
             })
         },
         components: {

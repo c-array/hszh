@@ -75,11 +75,11 @@
     </div>
 </template>
 <style scoped lang="less">
-    @import '../../public/less/modules/exit-enter-flight.less';
+    @import '../../../public/less/modules/panoramic/flight.less';
 </style>
 <script>
     import { mapState, mapMutations } from 'vuex';
-    import heads from '../common/head.vue';
+    import heads from '../../common/head.vue';
     export default {
         name: "exit-enter-flight",
         components: {
@@ -90,7 +90,7 @@
                 lineConfig: state => state.common.lineConfig,
                 histogramConfig: state => state.common.histogramConfig,
                 mapConfig: state => state.common.mapConfig,
-                chartsData: state => state.common.exitEnterFlight.chartsData
+                chartsData: state => state.common.flight.chartsData
             })
         }
     }

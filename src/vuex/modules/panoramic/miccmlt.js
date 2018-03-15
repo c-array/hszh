@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import http from '../../public/tools/http';
+import http from '../../../public/tools/http';
 export default {
     namespaced: true,
     state: {
