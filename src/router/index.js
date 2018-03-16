@@ -37,14 +37,13 @@ export default new Router({
     },
     /* 会商指挥-日常调度 */
     {
-      path: '/contacts', //通讯录
-      name: 'contacts',
-      component: resolve => require(['@/components/daily/contacts/index'],resolve)
+      path: '/daily', //日常调度
+      name: 'daily',
+      component: resolve => require(['@/components/daily/index'],resolve)
     },
     {
         path:'*', //路由url
         redirect:"/panoramic",
-        //component:resolve => require(['@/login/index.vue'],resolve) //加载组件
     }
   ]
 })

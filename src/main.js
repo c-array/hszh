@@ -13,10 +13,33 @@ Vue.prototype.$formatDate = formatDate;
 Vue.prototype.$copyObj = copyObj;
 
 //引入elementui组件库
-import { Message,MessageBox } from 'element-ui';
+import { 
+  Message,
+  MessageBox,
+  Dialog,
+  Button,
+  Tabs,
+  TabPane,
+  Table,
+  TableColumn,
+  Pagination,
+  Form,
+  FormItem,
+  Input 
+} from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 Vue.prototype.$MessageBox = MessageBox;
 Vue.prototype.$Message = Message;
+Vue.use(Dialog);
+Vue.use(Button);
+Vue.use(Tabs);
+Vue.use(TabPane);
+Vue.use(Table);
+Vue.use(TableColumn);
+Vue.use(Pagination);
+Vue.use(Form);
+Vue.use(FormItem);
+Vue.use(Input);
 
 //引入图表组件
 import 'v-charts/lib/style.css';

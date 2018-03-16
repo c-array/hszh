@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 Vue.use(Vuex);
 
+//全景监控
 import login from './modules/panoramic/login';
 import panoramic from './modules/panoramic/index';
 import person from './modules/panoramic/person';
@@ -9,6 +10,10 @@ import flight from './modules/panoramic/flight';
 import check from './modules/panoramic/check';
 import miccmlt from './modules/panoramic/miccmlt';
 import nuclear from './modules/panoramic/nuclear';
+
+//日常调度
+import contacts from './modules/daily/contacts';
+import meeting from './modules/daily/meeting';
 
 export default new Vuex.Store({
     modules: {
@@ -146,7 +151,9 @@ export default new Vuex.Store({
                 flight,
                 check,
                 miccmlt,
-                nuclear
+                nuclear,
+                contacts,
+                meeting
             }
         }
     }
