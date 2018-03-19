@@ -1,7 +1,7 @@
 <template>
     <div class="inner miccmlt bg">
         <heads></heads>
-        <div class="container">
+        <div class="container-box">
             <div class="box-left">
                 <dl>
                     <dt>各监测点报警数量统计</dt>

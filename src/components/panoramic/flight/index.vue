@@ -1,7 +1,7 @@
 <template>
     <div class="inner exit-enter-flight bg">
         <heads></heads>
-        <div class="container">
+        <div class="container-box">
             <div class="box-left">
                 <dl>
                     <dt>承运人航班数</dt>

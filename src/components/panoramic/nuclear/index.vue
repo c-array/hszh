@@ -1,7 +1,7 @@
 <template>
     <div class="inner nuclear bg">
         <heads></heads>
-        <div class="container">
+        <div class="container-box">
             <div class="box-left">
                 <dl>
                     <dt>核辐射</dt>

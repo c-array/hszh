@@ -1,7 +1,7 @@
 <template>
     <div class="inner home bg">
         <heads></heads>
-        <div class="container">
+        <div class="container-box">
             <div class="box-left">
                 <dl>
                     <dt>出入境人数</dt>

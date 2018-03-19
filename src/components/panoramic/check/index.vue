@@ -1,7 +1,7 @@
 <template>
     <div class="inner person-check bg">
         <heads></heads>
-        <div class="container">
+        <div class="container-box">
             <div class="box-left space-around">
                 <dl>
                     <dt>医学排查人数</dt>
