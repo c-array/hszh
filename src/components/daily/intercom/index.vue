@@ -24,7 +24,7 @@
                     </div>
                 </li>
             </ul>
-            <button><i class="el-icon-plus"></i></button>
+            <button @click="showDialog({title:'添加对讲机'})"><i class="el-icon-plus"></i></button>
         </div>
         <div class="box-right">
             <h3>对讲一组</h3>
@@ -113,13 +113,55 @@
                 </div>
             </div>
         </div>
+        <el-dialog
+            :title="dialog.title"
+            :visible.sync="dialog.visible"
+            width="30%">
+            <el-form label-width="90px" :model="formModel">
+                <el-form-item label="对讲机名称">
+                    <el-input v-model="formModel.name"></el-input>
+                </el-form-item>
+            </el-form>
+            <el-tabs class="contact-tabs">
+                <el-tab-pane label="通讯录联系人">
+                    <contacts1></contacts1>
+                </el-tab-pane>
+                <el-tab-pane label="多媒体联系人">
+                    <contacts2></contacts2>
+                </el-tab-pane>
+                <el-tab-pane label="临时联系人">
+                    <contacts3></contacts3>
+                </el-tab-pane>
+            </el-tabs>
+        </el-dialog>
     </div>
 </template>
 <style scoped lang="less">
     @import '../../../public/less/modules/daily/intercom/index.less';
 </style>
 <script>
+    import { mapState, mapMutations } from 'vuex';
+    import contacts1 from '../part/contacts1.vue';
+    import contacts2 from '../part/contacts2.vue';
+    import contacts3 from '../part/contacts3.vue';
     export default {
-        name:"meeting",
+        name:"intercom",
+        components: {
+            contacts1,
+            contacts2,
+            contacts3
+        },
+        computed: {
+            ...mapState({
+                dialog: state => state.common.daily.dialog,
+                formModel: state => state.common.daily.formModel,
+                queryModel: state => state.common.intercom.queryModel,
+            })
+        },
+        methods: {
+            ...mapMutations({
+                showDialog: "common/daily/showDialog"
+            })
+        }
     }
 </script>

@@ -5,7 +5,6 @@ export default {
     state: {
         queryModel:{
             name:"",
-            num:""
         }
     },
     mutations:{

@@ -19,7 +19,7 @@
                     <p>第一会议室</p>
                 </li>
             </ul>
-            <button @click="dialog.visible = !dialog.visible"><i class="el-icon-plus"></i></button>
+            <button @click="showDialog({title:'添加会议室'})"><i class="el-icon-plus"></i></button>
         </div>
         <div class="box-right">
             <h3>周一例会会议室</h3>
@@ -117,7 +117,7 @@
         <el-dialog
             :title="dialog.title"
             :visible.sync="dialog.visible"
-            width="50%">
+            width="35%">
             <el-form class="form-list" label-width="90px" :model="formModel">
                 <el-form-item class="col-md-7" label="会议室名称">
                     <el-input v-model="formModel.name"></el-input>
@@ -126,6 +126,17 @@
                     <el-input v-model="formModel.num"></el-input>
                 </el-form-item>
             </el-form>
+            <el-tabs class="contact-tabs">
+                <el-tab-pane label="通讯录联系人">
+                    <contacts1></contacts1>
+                </el-tab-pane>
+                <el-tab-pane label="多媒体联系人">
+                    <contacts2></contacts2>
+                </el-tab-pane>
+                <el-tab-pane label="临时联系人">
+                    <contacts3></contacts3>
+                </el-tab-pane>
+            </el-tabs>
         </el-dialog>
     </div>
 </template>
@@ -134,12 +145,26 @@
 </style>
 <script>
     import { mapState, mapMutations } from 'vuex';
+    import contacts1 from '../part/contacts1.vue';
+    import contacts2 from '../part/contacts2.vue';
+    import contacts3 from '../part/contacts3.vue';
     export default {
         name:"meeting",
+        components: {
+            contacts1,
+            contacts2,
+            contacts3
+        },
         computed: {
             ...mapState({
-                dialog: state => state.common.meeting.dialog,
-                formModel: state => state.common.meeting.formModel
+                dialog: state => state.common.daily.dialog,
+                formModel: state => state.common.daily.formModel,
+                queryModel: state => state.common.meeting.queryModel,
+            })
+        },
+        methods: {
+            ...mapMutations({
+                showDialog: "common/daily/showDialog"
             })
         }
     }

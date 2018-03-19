@@ -26,8 +26,8 @@
         name: "contacts3",
         computed: {
             ...mapState({
-                dialog: state => state.common.contacts.dialog,
-                formModel: state => state.common.contacts.formModel
+                dialog: state => state.common.daily.dialog,
+                formModel: state => state.common.daily.formModel
             })
         },
     }

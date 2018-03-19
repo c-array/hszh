@@ -33,9 +33,9 @@
         name:"contacts2",
         computed:{
             ...mapState({
-                dialog:state => state.common.contacts.dialog,
-                contact2:state => state.common.contacts.contact2,
-                pageConfig2:state => state.common.contacts.pageConfig2
+                dialog:state => state.common.daily.dialog,
+                contact2:state => state.common.daily.contact2,
+                pageConfig2:state => state.common.daily.pageConfig2
             })
         },
         created () {
@@ -43,7 +43,7 @@
         },
         methods:{
             ...mapMutations({
-                getContact2:"common/contacts/getContact2"
+                getContact2:"common/daily/getContact2"
             }),
             handleSizeChange(size){
                 this.pageConfig2.pageSize = size;

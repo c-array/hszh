@@ -221,9 +221,9 @@
 </style>
 <script>
     import { mapState, mapMutations } from 'vuex';
-    import contacts1 from './contacts1.vue';
-    import contacts2 from './contacts2.vue';
-    import contacts3 from './contacts3.vue';
+    import contacts1 from '../part/contacts1.vue';
+    import contacts2 from '../part/contacts2.vue';
+    import contacts3 from '../part/contacts3.vue';
     export default {
         name: "contacts",
         components: {
@@ -233,18 +233,16 @@
         },
         computed: {
             ...mapState({
-                dialog: state => state.common.contacts.dialog,
+                dialog: state => state.common.daily.dialog,
                 vm: state => state.common.contacts.vm,
-                contact1: state => state.common.contacts.contact1,
-                contact2: state => state.common.contacts.contact2,
-                pageConfig: state => state.common.contacts.pageConfig
+                pageConfig: state => state.common.daily.pageConfig
             })
         },
         created() {
         },
         methods: {
             ...mapMutations({
-                showDialog: "common/contacts/showDialog",
+                showDialog: "common/daily/showDialog",
                 selectKey: "common/contacts/selectKey",
                 removeKey: "common/contacts/removeKey",
             })

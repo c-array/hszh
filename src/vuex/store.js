@@ -12,8 +12,10 @@ import miccmlt from './modules/panoramic/miccmlt';
 import nuclear from './modules/panoramic/nuclear';
 
 //日常调度
+import daily from './modules/daily';
 import contacts from './modules/daily/contacts';
 import meeting from './modules/daily/meeting';
+import intercom from './modules/daily/intercom';
 
 export default new Vuex.Store({
     modules: {
@@ -152,8 +154,10 @@ export default new Vuex.Store({
                 check,
                 miccmlt,
                 nuclear,
+                daily,
                 contacts,
-                meeting
+                meeting,
+                intercom,
             }
         }
     }
