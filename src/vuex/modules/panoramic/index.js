@@ -1,5 +1,4 @@
 import Vue from 'vue';
-
 export default {
     namespaced: true,
     state: {
@@ -81,6 +80,21 @@ export default {
         },
     },
     mutations: {
-
+        getPerson(state,param){
+            Vue.$http.get({
+                url:"/alarmNum",
+                success: data => {
+                    console.log(data);
+                },
+                error: msg => {
+                    console.log(msg);
+                }
+            })
+        } 
+    },
+    actions:{
+        getPerson({commit},param){
+            commit('getPerson');
+        }
     }
 }

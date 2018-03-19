@@ -150,7 +150,7 @@
 </style>
 <script>
     import Vue from "vue";
-    import {mapState,mapMutations} from 'vuex';
+    import {mapState,mapMutations,mapActions} from 'vuex';
     import {Steps,Step,Carousel,CarouselItem,Progress} from "element-ui";
     Vue.component(Steps.name,Steps);
     Vue.component(Step.name,Step);
@@ -176,6 +176,14 @@
             dimensions,
             deviceMonitor,
             heads
+        },
+        created () {
+          this.getPerson();  
+        },
+        methods: {
+            ...mapActions({
+                getPerson:"common/panoramic/getPerson"
+            })
         }
     }
 </script>

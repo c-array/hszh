@@ -1,6 +1,5 @@
-import Vue from 'vue';
 //获取日期
-export const formatDate = (params => {
+export default params => {
     function fillIn(value){
         if(value < 10){
             return "0" + value;
@@ -39,9 +38,4 @@ export const formatDate = (params => {
         time = year + '-' + fillIn(month) + '-' + fillIn(ndate) + ' ' + fillIn(hour) + ':' + fillIn(minute) + ':' + fillIn(second);
     }
     return time;
-});
-
-//深度copy对象
-export const copyObj = (obj => {
-    return JSON.parse(JSON.stringify(obj));
-});
+}

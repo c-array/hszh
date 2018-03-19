@@ -6,11 +6,10 @@ import store from './vuex/store';
 Vue.config.productionTip = false;
 
 //引入公用方法
-import { formatDate, copyObj } from './public/tools/common';
+import Plugin from './public/tools/plugin';
 import http from './public/tools/http';
-Vue.prototype.$http = http;
-Vue.prototype.$formatDate = formatDate;
-Vue.prototype.$copyObj = copyObj;
+Vue.use(http);
+Vue.use(Plugin);
 
 //引入elementui组件库
 import { 
